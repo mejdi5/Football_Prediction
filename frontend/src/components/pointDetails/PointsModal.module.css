@@ -1,0 +1,44 @@
+.table {
+    width: 100%;
+    border-spacing: 20px;
+}
+
+.th {
+    text-align: center;
+    width: 30%
+}
+
+.td {
+    text-align: center;
+    width: 30%
+}
+
+.total {
+    float: right;
+    margin-right: 10%;
+}
+
+@media only screen and (max-device-width: 600px) {
+    .header {
+        font-size: 40px;
+    }
+
+    .table {
+        border-spacing: 0px;
+    }
+    
+    .th{
+        font-size: 28px;
+        width: 150px
+    }
+
+    .td {
+        font-size: 28px;
+        width: 150px
+    }
+
+    .total {
+        font-size: 40px;
+    }
+
+}

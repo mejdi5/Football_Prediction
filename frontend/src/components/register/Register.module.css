@@ -1,0 +1,48 @@
+.required {
+    color: red
+}
+
+
+.formFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+@media only screen and (max-device-width: 600px)  {
+
+    .header {
+        font-size: 40px;
+    }
+
+    .label {
+        font-size: 40px;
+    }
+
+    .input {
+        margin-top: 5px;
+        height: 50px;
+        font-size: 35px;
+    }
+
+    .formFooter {
+        margin-top: 50px;
+    }
+
+    .button {
+        font-size: 40px;
+    }
+}

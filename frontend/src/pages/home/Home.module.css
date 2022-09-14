@@ -1,0 +1,127 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(161, 159, 159);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container::before {    
+    content: "";
+    background: url("https://play-lh.googleusercontent.com/NUvIXijlsTJRl2d829bIuBdZjqyCnf9VG98ZT3FqQl9ffEvy4ynhs1tsxI5nD75xKA") ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.wrapper {
+    width: 40%;
+    height: 70%;
+    margin-bottom: 130px;
+    display: flex;
+    flex-direction: column;
+    background-color: azure;
+    border-radius: 15px;
+    position: relative
+}
+
+.header {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5%;
+    margin-bottom: 0%;
+    position: relative
+}
+
+.body {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5%;
+    margin-bottom: 0%;
+    padding: 5%;
+    position: relative;
+}
+
+.footer {
+    flex: 0.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0% 5% 5% 5%;
+    margin: 0% 5%;
+    position: relative
+}
+
+
+.required {
+    color: red;
+}
+
+.logo {
+    font-size: 50px;
+    font-weight: 800;
+    color: rgb(70, 192, 81);
+    margin-bottom: 15px;
+    text-align: center
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+@media only screen and (max-device-width: 600px) {
+
+    .wrapper {
+        width: 70%;
+        height: 60%;
+        margin-bottom: 250px;
+    }
+
+    .logo {
+        font-size: 100px;
+    }
+
+    .label {
+        font-size: 40px;
+    }
+
+    .input {
+        margin-top: 5px;
+        height: 50px;
+        font-size: 35px;
+    }
+
+    .button {
+        margin-top: 50px;
+    }
+
+    .login, .register{
+        font-size: 40px;
+    }
+}
+
+

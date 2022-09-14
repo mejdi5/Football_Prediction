@@ -1,0 +1,52 @@
+.form {
+    display: flex;
+    justify-content: space-around
+}
+
+.formgroup {
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    width: 40px;
+    height: 20px;
+    margin: 0px 10px
+}
+
+.label {
+    font-weight: bold;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-device-width: 600px) {
+
+    .header {
+        font-size: 40px;
+    }
+
+    .input {
+        width: 70px;
+        height: 40px;
+        font-size: 30px;
+        margin-top: 7px;
+    }
+    
+    .label {
+        font-weight: bold;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .button {
+        margin-top: 10px;
+    }
+    
+    .buttonText {
+        font-size: 35px;
+    }
+}

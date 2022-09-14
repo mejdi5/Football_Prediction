@@ -1,0 +1,187 @@
+.container{
+    display: flex;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0px 10px;
+}
+
+.wrapper::before {    
+    content: "";
+    background: url("https://www.leparisien.fr/resizer/hlRb1ojjJ2yhD68N1pjVIJLR964=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/leparisien/3ETACHOGENC7JH3P635GLWVJJQ.jpg") ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.4;
+}
+
+.top {
+    height: 10%;
+    margin: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative
+}
+
+.label {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.form {
+    display: flex;
+    gap: 5px;
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+.input {
+    border: none;
+    outline: none;
+}
+
+.bottom{
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+    width: 50vw;
+    margin: 20px;
+    margin-top: 10px;
+    position: relative;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: rgb(82, 99, 162);
+    color: white;
+}
+
+.matchList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.matchItem {
+    height: 10%;
+    width: 90%;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.matchTeam {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: 0px 5px;
+}
+
+.scoreButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(27, 159, 55);
+    color: white;
+}
+
+.calculate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 10%;
+    position: relative
+}
+
+.msg {
+    color: green;
+    text-align: center;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+@media only screen and (max-device-width: 600px) {
+
+    .wrapper {
+        justify-content: space-between;
+        padding: 5% 0% 34% 0%
+    }
+
+    .top {
+        height: 5%;
+        gap: 15px
+    }
+
+    .bottom{
+        display: flex;
+        justify-content: center;
+        height: 50vh;
+        width: 80%;
+        margin: 20px;
+    }
+
+    .label {
+        font-size: 35px;
+        text-align: center;
+    }
+
+    .form {
+        margin-top: 5px;
+        height: 40px;
+        font-size: 35px;
+        border: 2px solid black
+    }
+
+    .input {
+        width: 70px
+    }
+
+    .matchList {
+        height: 50vh;
+        width: 100%;
+        margin: 0px;
+    }
+
+    .matchItem {
+        font-size: 30px;
+        width: 100%;
+        margin: 10px 0px;
+    }
+
+    .matchTeam {
+        text-align: center;
+        font-size: 27px;
+        margin: 0px 10px;
+    }
+
+    .dash {
+        padding-top: 3px;
+    }
+}

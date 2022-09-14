@@ -1,0 +1,16 @@
+.user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 15px 15px 15px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.button {
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(62, 73, 168);
+    color: white;
+    padding: 5px
+}
