@@ -25,7 +25,7 @@ router.post('/login', async (req, res) => {
         user.password !== req.body.password && res.status(401).json({msg: "Wrong email or password!"}); //wrong password
 		return res.status(200).send({ msg: "Logged with success", user });
     } catch (error) {
-        res.status(500).json({msg: "server error", error: error.message});
+        res.status(500).json({msg: "server error", error: error.message}); 
     }
 })
 
@@ -54,5 +54,17 @@ router.put('/:userId', async (req, res) => {
         res.status(500).json(error);
     }
 })
+
+//DELETE USER
+router.delete('/:userId', async (req, res) => {
+    try {
+        await User.findByIdAndDelete(req.params.userId)
+        res.status(200).json({msg: "User deleted.."});
+    } catch (error) {
+        console.log(error)
+        res.status(500).json(error);
+    }
+})
+
 
 module.exports = router

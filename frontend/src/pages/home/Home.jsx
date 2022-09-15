@@ -13,6 +13,7 @@ const Home = () => {
     const password = useRef(null)
     const dispatch = useDispatch()
     const [showRegisterModal, setShowRegisterModal] = useState(false);
+    const [error, setError] = useState(null)
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -24,10 +25,16 @@ const Home = () => {
             })
             dispatch(getUser(res.data.user))
             }
-        } catch (error) {
-            console.log(error)
+        } catch (err) {
+            console.log(err)
+            if (err?.response?.data) {
+                setError(err?.response?.data?.msg)
+            } else {
+                setError('something went wrong..') 
+            }
         }
     }
+
 
 return (
 <div className={styles.container}>
@@ -35,13 +42,13 @@ return (
         <div className={styles.header}>
             <h3 className={styles.logo}>Football</h3>
         </div>
+        <div className={styles.error}>{error}</div>
         <div className={styles.body}>
             <Form>
                 <FormGroup className={styles.form}>
                     <Label className={styles.label}>Email address <span className={styles.required}>*</span></Label>
                     <input 
                     type="email" 
-                    //className="form-control"
                     className={styles.input}
                     placeholder="email.."
                     ref={email} 
@@ -54,7 +61,6 @@ return (
                     type="password" 
                     placeholder="Password.."
                     required 
-                    //className="form-control"
                     className={styles.input}
                     ref={password}
                     />
