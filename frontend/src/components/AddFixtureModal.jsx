@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Modal, ModalHeader, ModalBody, Form, Button, Label, FormGroup} from 'reactstrap';
 import { useDispatch, useSelector } from 'react-redux'
 import { Axios } from "../Axios"
@@ -10,6 +10,8 @@ const AddFixtureModal = ({showAddFixtureModal, setShowAddFixtureModal}) => {
     const dispatch = useDispatch()
     const fixtures = useSelector(state => state.fixtureSlice.fixtures)
     const user = useSelector(state => state.userSlice.user)
+    const [date, setDate] = useState()
+    const [time, setTime] = useState()
     const [deadline, setDeadline] = useState()
 
     const handleAddFixture = (e) => {
@@ -24,6 +26,12 @@ const AddFixtureModal = ({showAddFixtureModal, setShowAddFixtureModal}) => {
         setShowAddFixtureModal(false)
     }
 
+    useEffect(() => {
+        date && time &&
+    setDeadline(date + 'T' + time)
+    }, [date, time])
+    
+
 return (
     <Modal isOpen={showAddFixtureModal} toggle={() => setShowAddFixtureModal(!showAddFixtureModal)}>
     <ModalHeader toggle={() => setShowAddFixtureModal(!showAddFixtureModal)}>New Fixture</ModalHeader>
@@ -37,10 +45,14 @@ return (
         <Label>DeadLine</Label>
         <input 
         type="date" 
-        placeholder="deadline.."
         required 
         className="form-control"
-        onChange={e => setDeadline(e.target.value)}
+        onChange={e => setDate(e.target.value)}
+        />
+        <input 
+        type="time" 
+        className="form-control"
+        onChange={e => setTime(e.target.value)}
         />
     </FormGroup>
     <Button 

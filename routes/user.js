@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const User = require("../models/User");
-
+const Score = require("../models/Score");
+const Prediction = require("../models/Prediction");
 
 //register 
 router.post('/register', async (req, res) => {
@@ -63,7 +64,7 @@ router.delete('/:userId', async (req, res) => {
     } catch (error) {
         console.log(error)
         res.status(500).json(error);
-    }
+    }  
 })
 
 

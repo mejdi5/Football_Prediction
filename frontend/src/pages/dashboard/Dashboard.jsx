@@ -66,7 +66,8 @@ return (
                     Fixture {currentFixture?.fixtureNumber}
                 </span>
                 <span className={styles.deadline}>
-                    Deadline: {daysArray[new Date(currentFixture?.deadline).getDay()]} {new Date(currentFixture?.deadline).getDate()} - {new Date(currentFixture?.deadline).getMonth() + 1} - {new Date(currentFixture?.deadline).getFullYear()} | 00:00
+                    Deadline: {daysArray[new Date(currentFixture?.deadline).getDay()]} {new Date(currentFixture?.deadline).getDate()} - {new Date(currentFixture?.deadline).getMonth() + 1} - {new Date(currentFixture?.deadline).getFullYear()} 
+                    | {new Date(currentFixture?.deadline).getHours()} : {new Date(currentFixture?.deadline).getMinutes() < 10 ? '0' + new Date(currentFixture?.deadline).getMinutes() : new Date(currentFixture?.deadline).getMinutes() }
                 </span>
                 
                 <div className={styles.editFixture}>

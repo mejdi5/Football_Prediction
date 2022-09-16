@@ -61,7 +61,7 @@ function App() {
       }, [currentFixtureUserPredictions])
   
       useEffect(() => {
-      const getAllScores = async () => {
+      const getAllScores = async () => {  
           try {
               const res = await Axios.get(`/scores`)
               dispatch(getScores(res.data))
@@ -71,6 +71,7 @@ function App() {
       }
       getAllScores()
       }, [scores])
+
 
   return (
     <BrowserRouter>

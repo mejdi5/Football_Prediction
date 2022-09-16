@@ -4,6 +4,18 @@ const Fixture = require("../models/Fixture");
 const Prediction = require("../models/Prediction");
 
 
+//Post user scores
+router.post("/", async (req, res) => {
+    const newScore = new Score(req.body);
+    try {
+        const savedScore = await newScore.save();
+        res.status(200).json(savedScore);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+});
+
+
 //GET all scores
 router.get("/", async (req, res) => {
     try {
@@ -103,6 +115,16 @@ router.put('/:userId/:fixtureId/:matchId', async (req, res) => {
                     { new: true }
                 )}
         res.status(200).json("score edited..");
+    } catch (error) {
+        console.log(error)
+        res.status(500).json(error);
+    }
+})
+
+router.delete('/:scoreId', async (req, res) => {
+    try {        
+            await Score.findByIdAndDelete(req.params.scoreId)
+        res.status(200).json({msg: "scores deleted.."});
     } catch (error) {
         console.log(error)
         res.status(500).json(error);

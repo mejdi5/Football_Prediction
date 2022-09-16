@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const Prediction = require("../models/Prediction");
+const User = require("../models/User");
+const Score = require("../models/Score");
 
 //POST NEW Prediction (user)
 router.post("/", async (req, res) => {
@@ -17,6 +19,12 @@ router.post("/", async (req, res) => {
     });
     try {
         const savedPrediction = await newPrediction.save();
+        const newScore = new Score({
+            userId: req.body.userId,
+            fixtureId: req.body.fixtureId,
+            matchId: req.body.matchId
+        })
+        await newScore.save()
         res.status(200).json(savedPrediction);
     } catch (error) {
         console.log(error)

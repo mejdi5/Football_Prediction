@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Modal, ModalHeader, ModalBody, Form, Button, Label, FormGroup} from 'reactstrap';
 import { useDispatch, useSelector } from 'react-redux'
 import { Axios } from "../Axios"
@@ -9,6 +9,8 @@ const EditFixtureModal = ({showEditFixtureModal, setShowEditFixtureModal, curren
 
     const user = useSelector(state => state.userSlice.user)
     const [deadline, setDeadline] = useState()
+    const [date, setDate] = useState()
+    const [time, setTime] = useState()
 
     const handleEditFixtureDeadline = (e) => {
         if (deadline) {
@@ -23,6 +25,12 @@ const EditFixtureModal = ({showEditFixtureModal, setShowEditFixtureModal, curren
         }
         setShowEditFixtureModal(false)
     }
+
+    useEffect(() => {
+        date && time &&
+    setDeadline(date + 'T' + time)
+    }, [date, time])
+
 
 return (
     <Modal isOpen={showEditFixtureModal} toggle={() => setShowEditFixtureModal(!showEditFixtureModal)}>
@@ -39,7 +47,12 @@ return (
         type="date" 
         required 
         className="form-control"
-        onChange={e => setDeadline(e.target.value)}
+        onChange={e => setDate(e.target.value)}
+        />
+        <input 
+        type="time" 
+        className="form-control"
+        onChange={e => setTime(e.target.value)}
         />
     </FormGroup>
     <Button 

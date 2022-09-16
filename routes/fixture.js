@@ -1,7 +1,5 @@
 const router = require("express").Router();
 const Fixture = require("../models/Fixture");
-const User = require("../models/User");
-const Score = require("../models/Score");
 
 
 //POST NEW Fixture (admin)
@@ -81,16 +79,6 @@ router.put('/add-match/:fixtureId', async (req, res) => {
             }}, 
             { new: true }
         )
-        //post users score 
-        const users = await User.find({isAdmin: false})
-        users.map(async user => {
-                const newScore = new Score({
-                    userId: user._id,
-                    fixtureId: editedFixture._id,
-                    matchId: editedFixture.matches[editedFixture.matches.length - 1]._id.toString()
-                })
-            await newScore.save()
-        })
         res.status(200).json({msg: "match added..", editedFixture});
     } catch (error) {
         console.log(error)
