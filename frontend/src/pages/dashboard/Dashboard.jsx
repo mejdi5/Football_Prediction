@@ -163,6 +163,26 @@ return (
                 }
             </ul>
             }
+            <div className={styles.rulesWrapper}>
+            <ul className={styles.rules}>
+                <li className={styles.rulesItem}>
+                    <strong>Correct result</strong> 
+                    <span>3 points</span>
+                </li>
+                <li className={styles.rulesItem}>
+                    <strong>Home goals</strong> 
+                    <span>1 point</span>
+                </li>
+                <li className={styles.rulesItem}>
+                    <strong>Away goals</strong> 
+                    <span>1 point</span>
+                </li>
+                <li className={styles.rulesItem}>
+                    <strong>Goal difference</strong> 
+                    <span>1 point</span>
+                </li>
+            </ul>
+            </div>
         </div>
         : 
         <div className={styles.bottom}>

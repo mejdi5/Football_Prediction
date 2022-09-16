@@ -38,7 +38,7 @@ return (
     <FormGroup className={styles.formGroup}>
         <Label className={styles.label}>{currentMatch.homeTeam}</Label>
     </FormGroup>
-    <FormGroup>
+    <FormGroup className={styles.formGroup}>
         <input
         type="number"
         className={styles.input}
